@@ -156,7 +156,7 @@ NAN_METHOD(mouseClick)
 
 	if (info.Length() == 2)
 	{
-		doubleC = info[1]->BooleanValue(Nan::GetCurrentContext()).ToChecked();
+		doubleC = info[1]->BooleanValue(v8::Isolate::GetCurrent());
 	}
 	else if (info.Length() > 2)
 	{
