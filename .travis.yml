@@ -1,14 +1,16 @@
 sudo: false
 language: cpp
 
-os:
-  - linux
-  - osx
+- os: linux
+  dist: xenial
+  services: xvfb
+- os: osx
 
 cache:
   directories:
     - node_modules
 
+dist: xenial
 services:
   - xvfb
 
