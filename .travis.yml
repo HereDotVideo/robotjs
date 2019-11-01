@@ -6,12 +6,13 @@ matrix:
   include:
   - os: linux
     dist: bionic
+    env: CC=gcc CXX=g++ 
     services: xvfb
   - os: osx
     osx_image: xcode11
     env: CC=gcc CXX=g++ 
     compiler: clang
-    
+
 cache:
   directories:
     - node_modules
@@ -30,8 +31,6 @@ addons:
       - zlib1g-dev
       - libpng-dev
       - libxtst-dev
-      - g++-4.8
-      - gcc-4.8
 
 before_install:
   # reinstall latest nvm
@@ -42,9 +41,6 @@ before_install:
   # print versions
   - node --version
   - npm --version
-
-  # use g++-4.8 on Linux
-  - if [[ $TRAVIS_OS_NAME == "linux" ]]; then export CXX=g++-4.8; fi
   - $CXX --version
 
 install:
