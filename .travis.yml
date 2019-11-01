@@ -1,13 +1,14 @@
 sudo: false
-language: cpp
+node_js: '12'
+language: node_js
 
 matrix:
-  - name: Linux
-    os: linux
-    dist: xenial
+  include:
+  - os: linux
+    dist: bionic
     services: xvfb
-  - name: Max
-    os: osx
+  - os: osx
+    osx_image: xcode11
 
 cache:
   directories:
