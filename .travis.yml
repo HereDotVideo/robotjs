@@ -13,10 +13,6 @@ cache:
   directories:
     - node_modules
 
-dist: xenial
-services:
-  - xvfb
-
 git:
   depth: 5
 
