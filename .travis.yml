@@ -1,10 +1,13 @@
 sudo: false
 language: cpp
 
-- os: linux
-  dist: xenial
-  services: xvfb
-- os: osx
+matrix:
+  - name: Linux
+    os: linux
+    dist: xenial
+    services: xvfb
+  - name: Max
+    os: osx
 
 cache:
   directories:
