@@ -9,7 +9,9 @@ matrix:
     services: xvfb
   - os: osx
     osx_image: xcode11
-
+    env: CC=gcc CXX=g++ 
+    compiler: clang
+    
 cache:
   directories:
     - node_modules
